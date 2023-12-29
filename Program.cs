@@ -30,6 +30,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//  Add Serilog Request Logginng
+app.UseSerilogRequestLogging();
+
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
