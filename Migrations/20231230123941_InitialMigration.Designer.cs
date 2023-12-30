@@ -11,7 +11,7 @@ using bogus_API.Data;
 namespace bogus_API.Migrations
 {
     [DbContext(typeof(MakeCartDbContext))]
-    [Migration("20231229175502_InitialMigration")]
+    [Migration("20231230123941_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -33,11 +33,9 @@ namespace bogus_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Director")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -54,7 +52,6 @@ namespace bogus_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CustomerName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MovieId")
